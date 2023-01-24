@@ -4,7 +4,6 @@ const { errorHandler } = require('./middleware/errorMiddleware');
 const dotenv = require('dotenv').config();
 const connectDB = require('./config/db');
 const cors = require('cors');
-const port = process.env.PORT;
 
 connectDB();
 const app = express();
@@ -26,4 +25,4 @@ app.get('/', async (req, res) => {
 app.use(errorHandler);
 
 // PORT
-app.listen(port, () => console.log(`Server started on port ${port}`))
+app.listen(5000, () => console.log("Server started on http://localhost:5000"));
