@@ -1,0 +1,35 @@
+@import "../../style.scss";
+
+.home {
+   @include themify($themes) {
+    background: themed("bgContainer");
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 100px;
+    
+
+        .wrapper {
+            background-color: themed("bgWrapper");
+            width: 90%;
+            min-height: auto;
+            padding: 5px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            box-shadow: 0px 2px 20px rgba(9, 1, 8, 0.2);
+            margin: 20px auto;
+
+            @include mobile {
+                min-width: 95%;
+                padding: 6px;
+                border-radius: 0;
+                margin-bottom: 0;
+            }
+
+            img {
+                width: 100%;
+                border-radius: 10px;
+            }
+        }
+   }
+}

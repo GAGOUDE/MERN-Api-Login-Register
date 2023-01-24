@@ -1,0 +1,153 @@
+@import "../../style.scss";
+
+.register {
+    @include themify($themes) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #E2D1F9;
+        position: relative;
+
+        @include tablet {
+            height: 850px;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: row-reverse;
+            flex-wrap: wrap;
+            width: 80%;
+            background-color: white;
+            border-radius: 10px;
+            min-height: 600px;
+            overflow: hidden;
+
+            @include tablet {
+                flex-direction: column-reverse;
+                margin: 100px auto;
+                width: 90%;
+            }
+
+            // LEFT to RIGHT (LOGIN)
+            .left {
+                flex: 1;
+                background: linear-gradient(rgba(49, 119, 115, 0.9), rgba(49, 119, 115, 0.5)), url("https://images.pexels.com/photos/3771127/pexels-photo-3771127.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") center;
+                background-size: cover;
+                padding: 50px;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                color: white;
+
+                @include tablet {
+                    gap: 15px;
+                    padding: 10px;
+                }
+
+                h1 {
+                    font-size: 80px;
+                    line-height: 100px;
+
+                    @include tablet {
+                        font-size: 55px;
+                    }
+                }
+
+                p {
+                    text-align: justify;
+                }
+
+                span {
+                    font-size: 14px;
+                }
+
+                button {
+                    width: 50%;
+                    padding: 10px;
+                    border: 1px solid #317773;
+                    background-color: white;
+                    color: #317773;
+                    border-radius: 5px;
+                    font-size: 16px;
+                    font-weight: 500;
+                    cursor: pointer;
+                    transition: all 300ms ease;
+
+                    &:hover {
+                        background-color: #317773;
+                        color: white;
+                        border: 1px solid white;
+                    }
+                }
+            }
+
+            // RIGHT to LEFT (REGISTER)
+            .right {
+                flex: 1;
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 30px;
+
+                h1{
+                    color: #555;
+                    font-size: 60px;
+
+                    @include tablet{
+                        font-size: 45px;
+                    }
+                }
+
+                .icon {
+                    color: #555;
+                    font-size: 60px;
+                    
+                    @include tablet{
+                        font-size: 45px;
+                    }
+                }
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 30px;
+
+                    @include tablet {
+                        gap: 0;
+                    }
+
+                    .input {
+                        width: 80%;
+
+                        @include tablet {
+                            width: 85%;
+                            margin-bottom: 15px;
+                        }
+                    }
+
+                    .btn-register {
+                        width: 50%;
+                        padding: 10px;
+                        border: 1px solid transparent;
+                        background-color: #317773;
+                        color: white;
+                        border-radius: 5px;
+                        font-size: 16px;
+                        font-weight: 500;
+                        cursor: pointer;
+                        transition: all 300ms ease;
+
+                        &:hover {
+                            background-color: #317774cf;
+                            border: 1px solid white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

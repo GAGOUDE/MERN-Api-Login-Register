@@ -1,0 +1,72 @@
+@import "../../style.scss";
+
+.header {
+   @include themify($themes) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    padding: 20px 0;
+    border-bottom: 1px solid themed("textHeaderLogoColor");
+    margin: 0 auto 60px;
+    gap: 8px;
+
+    @include mobile {
+        flex-wrap: wrap;
+        justify-content: center;
+        gp: 10px;
+    }
+
+    .logo{
+        font-size: 2rem;
+        font-weight: 700;
+
+        @include mobile {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        a{
+            text-decoration: none;
+            color: themed("textHeaderLogoColor");
+        }
+    }
+
+    .btn {
+        padding: 10px 20px;
+        border: 1px solid themed("border");
+        border-radius: 5px;
+        background: themed("bgBtn");
+        color: themed("textBtn");
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        text-align: center;
+        appearance: button;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 300ms ease;
+
+        &:hover {
+            background: transparent ;
+            color: themed("bgBtn");
+        }
+
+        .icon-logout {
+            margin-right: 8px;
+        }
+    }
+
+    .icon-mode {
+        color: themed("textColor");
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid themed("textColor");
+        padding: 5px;
+        cursor: pointer;
+    }
+
+   }
+}
