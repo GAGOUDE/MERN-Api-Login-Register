@@ -1,9 +1,9 @@
 import axios from 'axios';
 
 // =========== FETCH API SERVER
-
-const API_URL_REGISTER = 'http://localhost:5000/api/users/'
-const API_URL_LOGIN = 'http://localhost:5000/api/users/login'
+// const BACKEND_SERVER = "https://marn-api-login-register.onrender.com/"
+const API_URL_REGISTER = 'https://marn-api-login-register.onrender.com/api/users/'
+const API_URL_LOGIN = 'https://marn-api-login-register.onrender.com/api/users/login'
 
 // Register user
 const register = async (userData) => {
