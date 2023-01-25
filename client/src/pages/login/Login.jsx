@@ -28,10 +28,6 @@ const Login = () => {
             toast.error(message);
         }
 
-        if (isSuccess || user) {
-            navigate('/')
-        }
-
         if (!user) {
             navigate('/login')
         }
@@ -57,6 +53,10 @@ const Login = () => {
 
         const userData = {
             email, password
+        }
+
+        if (isSuccess || user) {
+            navigate('/')
         }
 
         dispatch(login(userData))
