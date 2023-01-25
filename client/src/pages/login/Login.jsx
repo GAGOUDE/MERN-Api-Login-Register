@@ -26,11 +26,14 @@ const Login = () => {
     useEffect(() => {
         if (isError) {
             toast.error(message);
-            console.log(message)
         }
 
         if (isSuccess || user) {
             navigate('/')
+        }
+
+        if (!user) {
+            navigate('/login')
         }
 
         dispatch(reset())
@@ -47,6 +50,11 @@ const Login = () => {
     const onSubmit = (e) => {
         e.preventDefault();
 
+        // Validate all fields
+        if (!email || !password) {
+            toast.error("Veuillez remplir tous les champs !");
+        }
+
         const userData = {
             email, password
         }
@@ -54,15 +62,9 @@ const Login = () => {
         dispatch(login(userData))
     }
 
-    // const handleLogin = async (event) => {
-    //     event.preventDefault();
-
-    //     return navigate('/');
-    // }
-
     if (isLoading) {
         return (
-            <Box sx={{ display: 'flex' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
                 <CircularProgress />
             </Box>
         )

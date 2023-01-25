@@ -37,6 +37,7 @@ const Register = () => {
     useEffect(() => {
         if (isError) {
             toast.error(message);
+            console.log(message)
         }
 
         if (isSuccess || user) {
@@ -61,6 +62,29 @@ const Register = () => {
     const onSubmit = (e) => {
         e.preventDefault();
 
+        // Validate all fields
+        if (!name || !email || !password) {
+            toast.error("Veuillez remplir tous les champs !");
+        }
+
+        // Validate name
+        if (!name || name.length < 2) {
+            toast.error("Le Nom doit comporter au moins 2 caractères")
+            return
+        }
+
+        // Validate email
+        if (!email) {
+            toast.error(message)
+            return
+        }
+
+        // Validate password
+        if (!password || password.length < 6) {
+            toast.error("Le mot de passe doit comporter au moins 6 caractères")
+            return
+        }
+
         const userData = {
             name, email, password
         }
@@ -70,7 +94,7 @@ const Register = () => {
 
     if (isLoading) {
         return (
-            <Box sx={{ display: 'flex' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
                 <CircularProgress />
             </Box>
         )

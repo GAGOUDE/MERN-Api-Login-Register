@@ -22,7 +22,7 @@ function App() {
           <Route path='/register' element={<Register />} />
         </Routes>
       </Router>
-      <ToastContainer />
+      <ToastContainer autoClose={8000} />
     </div>
   );
 }

@@ -42,6 +42,8 @@ function Home() {
             <Header />
 
             <div className='wrapper'>
+                <h3>J'espère que ma candidature pourra être prise en considération. <br /> Merci pour la visite.</h3>
+
                 <img src="https://images.pexels.com/photos/5439381/pexels-photo-5439381.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1" alt="image" />
             </div>
         </div>
