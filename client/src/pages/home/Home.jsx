@@ -21,7 +21,7 @@ function Home() {
         }
 
         if (!user) {
-            navigate('/login')
+            navigate('/register')
         }
 
         return () => {
